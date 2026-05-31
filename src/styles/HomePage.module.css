@@ -84,12 +84,13 @@
 
 .heroSection {
   background-color: var(--color-off-white);
-  padding: var(--section-padding);
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
   display: flex; /* Use flexbox for modern layout */
   justify-content: center;
   align-items: center;
+  min-height: calc(100vh - 73px);
 }
 
 .heroContentWrapper {
@@ -97,7 +98,7 @@
   flex-direction: column; /* Stacks content on mobile */
   align-items: center;
   justify-content: space-between;
-  gap: var(--gap-lg); /* Space between text and image */
+  gap: clamp(2.5rem, 6vw, 5rem); /* Space between text and image */
   position: relative;
   z-index: 2; /* Ensures content is above the background pattern */
 }
@@ -127,10 +128,12 @@
   color: var(--color-deep-grey);
   margin-bottom: 2rem;
   line-height: 1.6;
+  max-width: 560px;
 }
 
 .heroButtons {
   display: flex;
+  align-items: center;
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -155,12 +158,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
+  max-width: 540px;
 }
 
 .heroImage {
   width: 100%;
   max-width: 500px;
-  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   display: block;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -248,6 +254,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -277,8 +284,21 @@
 .processGrid,
 .testimonialsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: var(--gap-md);
+  align-items: stretch;
+}
+
+.productsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.servicesGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+
+.processGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
 }
 
 /* Product section with softer background */
@@ -330,6 +350,7 @@
 /* Contact Form Section */
 .bookSessionSection {
   background-color: var(--color-off-white);
+  text-align: center;
 }
 
 .bookSessionSubtitle {
@@ -379,6 +400,7 @@
   font-family: var(--font-sans-serif);
   background-color: #f8f8f8;
   transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+  display: block;
 }
 
 .bookingForm input:focus,
@@ -405,13 +427,31 @@
  * ---------------------------------------------------- */
 
 @media (max-width: 992px) {
+  .heroSection {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
   .heroContentWrapper {
     flex-direction: column;
     text-align: center;
   }
 
+  .heroSubtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroButtons {
+    justify-content: center;
+  }
+
   .heroImageContainer {
     margin-top: 2rem;
+  }
+
+  .productsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .section-heading {
@@ -420,10 +460,6 @@
 }
 
 @media (max-width: 768px) {
-  .section-padding {
-    padding: 4rem 1.5rem;
-  }
-
   .section-heading {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -431,5 +467,18 @@
   
   .heroTitle {
     font-size: 2.2rem;
+  }
+
+  .heroButtons,
+  .getStartedButton {
+    width: 100%;
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookingForm {
+    padding: 2rem 1.25rem;
   }
 }

@@ -12,6 +12,9 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .productCard:hover {
@@ -28,12 +31,19 @@
 
 .productName {
   font-size: 1.2rem;
-  margin-top: 1rem;
+  margin: 1rem 1rem 0;
   color: var(--primary-color);
+  flex: 1;
 }
 
 .productPrice {
   font-size: 1.1rem;
   color: var(--secondary-color);
   margin: 0.5rem 0 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .productImage {
+    height: 280px;
+  }
 }

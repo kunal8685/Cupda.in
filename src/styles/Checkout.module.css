@@ -6,16 +6,17 @@
 
 .checkoutContainer {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 4rem;
-  padding: 4rem 2rem;
-  max-width: 1400px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  padding: 3rem clamp(1rem, 4vw, 2rem) 4rem;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: var(--bg-light);
 }
 
 .addressFormContainer {
-  padding: 2rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -29,7 +30,7 @@
 
 .formRow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -83,6 +84,8 @@
   border-radius: 8px;
   color: var(--text-dark);
   height: fit-content;
+  position: sticky;
+  top: 6rem;
 }
 
 .discountSection {
@@ -141,5 +144,20 @@
 @media (max-width: 992px) {
   .checkoutContainer {
     grid-template-columns: 1fr;
+  }
+
+  .orderSummaryContainer {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .discountSection {
+    flex-direction: column;
+  }
+
+  .summaryTotal {
+    flex-direction: column;
+    gap: 0.25rem;
   }
 }

@@ -11,6 +11,10 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, background-color 0.3s ease;
   background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card:hover {
@@ -33,4 +37,5 @@
 .description {
   font-size: 0.9rem;
   color: #666;
+  max-width: 32ch;
 }

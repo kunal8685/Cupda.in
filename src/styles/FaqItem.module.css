@@ -9,6 +9,7 @@
   border-radius: 8px;
   margin-bottom: 1rem;
   overflow: hidden;
+  background: #ffffff;
 }
 
 .questionButton {
@@ -21,6 +22,7 @@
   border: none;
   cursor: pointer;
   text-align: left;
+  gap: 1rem;
 }
 
 .questionButton:hover {
@@ -32,12 +34,14 @@
   font-weight: 500;
   color: var(--text-dark);
   margin: 0;
+  line-height: 1.4;
 }
 
 .toggleIcon {
   font-size: 2rem;
   color: var(--secondary-color);
   transition: transform 0.3s ease;
+  flex: 0 0 auto;
 }
 
 .active .toggleIcon {

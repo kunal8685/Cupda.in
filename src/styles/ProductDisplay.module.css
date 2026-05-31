@@ -9,23 +9,33 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 4rem 2rem;
+  height: 100%;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .contentArea {
   max-width: 600px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .imageArea {
@@ -33,10 +43,14 @@
   gap: 1rem;
   width: 100%;
   max-width: 900px;
+  order: -1;
+  margin-bottom: 1.5rem;
 }
 
 .imageLeft {
   width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }

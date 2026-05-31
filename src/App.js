@@ -73,7 +73,12 @@ function App() {
                 return (
                     <div>
                         <button onClick={() => setPage('products')} style={{ margin: '1rem' }}>&larr; Back to Products</button>
-                        <ProductDetail product={selectedProduct} onBuyNow={handleBuyNow} />
+                        <ProductDetail
+                            product={selectedProduct}
+                            products={products}
+                            onBuyNow={handleBuyNow}
+                            onProductClick={handleProductClick}
+                        />
                     </div>
                 );
             case 'checkout':
