@@ -1,0 +1,50 @@
+/*
+* ========================================
+* src/styles/FaqItem.module.css
+* ========================================
+*/
+
+.faqItem {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.questionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.questionButton:hover {
+  background-color: #f5f0ec;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.toggleIcon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  transition: transform 0.3s ease;
+}
+
+.active .toggleIcon {
+  transform: rotate(45deg);
+}
+
+.answer {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--text-dark);
+}

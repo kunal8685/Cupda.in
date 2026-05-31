@@ -1,0 +1,46 @@
+/*
+* ========================================
+* src/styles/ProductDisplay.module.css
+* ========================================
+*/
+
+.productSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.contentArea {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.imageArea {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.imageLeft {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imageRight {
+  display: none; /* Hide the right image for this component based on your code */
+}

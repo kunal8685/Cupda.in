@@ -1,0 +1,140 @@
+/*
+* ========================================
+* src/styles/variables.css
+* ========================================
+*
+* This file defines the core CSS variables for the theme,
+* including fonts, colors, and global styles for a clean,
+* professional black-and-white aesthetic.
+*/
+
+/* --- Google Fonts Import --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* --- Custom Properties (CSS Variables) --- */
+
+:root {
+  /* Fonts */
+  --primary-font: 'Montserrat', sans-serif;
+  --secondary-font: 'Open Sans', sans-serif;
+  --font-serif-display: 'Playfair Display', serif;
+
+  /* Color Palette - Black and White Theme */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-dark-grey: #333333;
+  --color-medium-grey: #666666;
+  --color-light-grey: #EEEEEE;
+  --color-off-white: #F8F8F8;
+
+  /* General Colors */
+  --color-border-light: var(--color-light-grey);
+
+  /* Button Colors */
+  --button-bg-primary: var(--color-black);
+  --button-text-primary: var(--color-white);
+  --button-hover-bg-primary: var(--color-dark-grey);
+  --button-hover-text-primary: var(--color-white);
+  --button-border-primary: var(--color-black);
+
+  --button-bg-secondary: transparent;
+  --button-text-secondary: var(--color-black);
+  --button-border-secondary: var(--color-black);
+  --button-hover-bg-secondary: var(--color-black);
+  --button-hover-text-secondary: var(--color-white);
+
+  /* General Spacing & Transition */
+  --section-padding: 6rem 0;
+  --transition-speed: 0.3s ease-in-out;
+}
+
+/* --- Base Styles --- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--secondary-font);
+  color: var(--color-dark-grey);
+  background-color: var(--color-off-white);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--primary-font);
+  color: var(--color-dark-grey);
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--color-medium-grey);
+}
+
+/* --- Utility Classes --- */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: var(--section-padding);
+}
+
+.section-heading {
+  font-family: var(--primary-font);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-dark-grey);
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-family: var(--primary-font);
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--button-bg-primary);
+  color: var(--button-text-primary);
+  border: 1px solid var(--button-border-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--button-hover-bg-primary);
+  color: var(--button-hover-text-primary);
+  border-color: var(--button-hover-bg-primary);
+}
+
+.btn-secondary {
+  background-color: var(--button-bg-secondary);
+  color: var(--button-text-secondary);
+  border: 1px solid var(--button-border-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--button-hover-bg-secondary);
+  color: var(--button-hover-text-secondary);
+  border-color: var(--button-hover-bg-secondary);
+}
